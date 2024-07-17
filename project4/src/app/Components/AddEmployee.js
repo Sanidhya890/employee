@@ -4,6 +4,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const AddEmployee = ({ onEmployeeAdded }) => {
+  const URL="https://employee-tqa0.onrender.com"
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -16,7 +17,7 @@ const AddEmployee = ({ onEmployeeAdded }) => {
 
     try {
       const response = await axios.post(
-        `${window.location.origin}/api/v1/employee/add`,
+        `${URL}/api/v1/employee/add`,
         {
           first_name: firstName,
           last_name: lastName,
