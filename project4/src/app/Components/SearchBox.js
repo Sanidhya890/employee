@@ -4,6 +4,7 @@ import axios from "axios";
 import Card from "@/app/Components/Card.js"; // Adjust the import path as per your project structure
 
 const SearchBox = () => {
+  const URL="https://employee-tqa0.onrender.com"
   const [searchCriteria, setSearchCriteria] = useState({
     firstName: "",
     lastName: "",
@@ -38,7 +39,7 @@ const SearchBox = () => {
       }
 
       const response = await axios.get(
-        `${window.location.origin}/api/v1/employee/search`,
+        `${URL}/api/v1/employee/search`,
         {
           params: {
             first_name: firstName || undefined,
